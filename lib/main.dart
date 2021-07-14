@@ -8,9 +8,9 @@ import 'package:admin_dashboard/ui/layouts/splash/splash_layout.dart';
 
 import 'package:admin_dashboard/router/router.dart';
 
-import 'package:admin_dashboard/providers/auth_provider.dart';
-import 'package:admin_dashboard/providers/categories_provider.dart';
-import 'package:admin_dashboard/providers/sidemenu_provider.dart';
+
+import 'package:admin_dashboard/providers/providers.dart';
+
 
 import 'package:admin_dashboard/services/local_storage.dart';
 import 'package:admin_dashboard/services/navigation_service.dart';
@@ -33,10 +33,10 @@ class AppState extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(lazy: false, create: ( _ ) => AuthProvider() ),
-
         ChangeNotifierProvider(lazy: false, create: ( _ ) => SideMenuProvider() ),
-
         ChangeNotifierProvider(create: ( _ ) => CategoriesProvider() ),
+        ChangeNotifierProvider(create: ( _ ) => UsersProvider() ),
+        ChangeNotifierProvider(create: ( _ ) => UserFormProvider() ),
 
       ],
       child: MyApp(),

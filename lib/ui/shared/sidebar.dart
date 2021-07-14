@@ -17,7 +17,7 @@ class Sidebar extends StatelessWidget {
  
 
   void navigateTo( String routeName ) {
-    NavigationService.navigateTo( routeName );
+    NavigationService.replaceTo( routeName );
     SideMenuProvider.closeMenu();
   }
 
